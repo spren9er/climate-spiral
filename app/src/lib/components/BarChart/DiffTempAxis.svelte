@@ -13,7 +13,7 @@
 </script>
 
 <g style="--legend-color: {$theme.legendColor}">
-	{#each [[-3, '+1'], [-2, '0'], [2, '0'], [3, '+1']] as [y, label]}
+	{#each [[-3, '+1'], [-2, '0'], [-1, '-1'], [1, '-1'], [2, '0'], [3, '+1']] as [y, label]}
 		<line
 			x1={(1 / 10) * $width}
 			x2={(9 / 10) * $width}
@@ -40,5 +40,6 @@
 		text-anchor: end;
 		alignment-baseline: central;
 		pointer-events: none;
+		user-select: none;
 	}
 </style>

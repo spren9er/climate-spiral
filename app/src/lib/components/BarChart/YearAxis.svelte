@@ -41,5 +41,6 @@
 		text-anchor: middle;
 		alignment-baseline: central;
 		pointer-events: none;
+		user-select: none;
 	}
 </style>

@@ -13,6 +13,7 @@
 	import ClimateSpiral from '$lib/components/ClimateSpiral.svelte';
 	import DarkMode from '$lib/components/DarkMode.svelte';
 	import MediaControls from '$lib/components/MediaControls.svelte';
+	import OpacityControl from '$lib/components/OpacityControl.svelte';
 	import RadialChart from '$lib/components/RadialChart/RadialChart.svelte';
 	import Spinner from '$lib/components/Spinner.svelte';
 
@@ -109,6 +110,10 @@
 					<WebGL>
 						<ClimateSpiral />
 					</WebGL>
+
+					<Svg>
+						<OpacityControl />
+					</Svg>
 				</LayerCake>
 			</div>
 

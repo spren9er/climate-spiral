@@ -3,10 +3,10 @@ import { readable, writable } from 'svelte/store';
 const _themes = {
 	light: {
 		name: 'light',
-		backgroundColor: '#fafafa',
+		backgroundColor: '#dfdfd3',
 		color: '#777777',
-		legendColor: '#cccccc',
-		buttonColor: '#cccccc'
+		legendColor: '#999999',
+		buttonColor: '#999999'
 	},
 	dark: {
 		name: 'dark',

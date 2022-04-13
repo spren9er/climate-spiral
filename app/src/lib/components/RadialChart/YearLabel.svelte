@@ -24,5 +24,6 @@
 		text-anchor: middle;
 		alignment-baseline: middle;
 		pointer-events: none;
+		user-select: none;
 	}
 </style>

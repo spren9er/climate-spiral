@@ -8,6 +8,8 @@
 	import { getContext } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 
+	import { alpha } from '$lib/stores/alpha';
+
 	const { data, width, height, custom, xGet, yGet } = getContext('LayerCake');
 	const { speedFactor, play, next, prev, rewind } = getContext('MediaControls');
 	const { gl } = getContext('gl');
@@ -26,7 +28,7 @@
 		precision highp float;
 
 		uniform mat4 projection, rotateZ, view;
-    uniform float width, currentIndex, maxAbsDiff, numPoints, trailLength;
+    uniform float width, currentIndex, maxAbsDiff, numPoints, trailLength, alpha, nan;
 
     #pragma lines: attribute vec4 data;
 		#pragma lines: position = getPosition(data);
@@ -35,6 +37,7 @@
 
     vec4 getPosition(vec4 data) {
 			float index = data.x;
+			float diff = data.w;
 			float theta = data.y - PI / 2.0;
 			float radius = data.z;
 			float pause = 0.5 * trailLength;
@@ -44,9 +47,21 @@
 			float z = (2.0 * index / numPoints - 1.0);
 			float zScale = 0.01;
 
+			if (currentIndex <= numPoints + pause) {
+				if (index > currentIndex) return vec4(nan);
+			};
+
 			if (currentIndex > numPoints + pause) {
 				float slope = (currentIndex - numPoints - pause) / trailLength;
 				zScale = 0.74 * smoothstep(0.0, 1.0, slope / 2.0) + 0.01;
+
+				float x = numPoints - trailLength;
+				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
+				float opacity = step(threshold, index);
+				if (opacity == 1.0) {
+					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.25));
+				};
+				if (opacity == 0.0) return vec4(nan);
 			}
 
 			z = zScale * z;
@@ -65,16 +80,18 @@
 
 			if (currentIndex <= numPoints + pause) {
 				float border = min(currentIndex, numPoints);
-				// opacity = sqrt(smoothstep(border - trailLength, border, index)); // short trail
-				opacity = pow(smoothstep(border - trailLength, border, index), 0.2); // medium trail
-				// opacity = step(border - trailLength, index); // long trail
+				opacity = pow(smoothstep(border - trailLength, border, index), 0.25);
+
 				if (index > currentIndex) opacity = 0.0;
 			}
 
 			if (currentIndex > numPoints + pause) {
 				float x = numPoints - trailLength;
 				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
-				opacity = min(pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.1), step(threshold, index));
+				opacity = step(threshold, index);
+				if (opacity == 1.0) {
+					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.25));
+				};
 			};
 
 			vec3 redColor = vec3(0.404, 0.0, 0.122);
@@ -144,9 +161,10 @@
 					currentIndex: regl.prop('currentIndex'),
 					maxAbsDiff: regl.prop('maxAbsDiff'),
 					numPoints: regl.prop('numPoints'),
-					trailLength: regl.prop('trailLength')
+					trailLength: regl.prop('trailLength'),
+					alpha: regl.prop('alpha'),
+					nan: NaN
 				},
-				depth: { enable: true },
 				blend: {
 					enable: true,
 					func: {
@@ -228,7 +246,8 @@
 							maxAbsDiff,
 							numPoints,
 							trailLength,
-							rotateZ: glmat4.rotateZ([], glmat4.create(), angle)
+							rotateZ: glmat4.rotateZ([], glmat4.create(), angle),
+							alpha: $alpha / 100
 						}
 					]);
 				});

@@ -61,5 +61,6 @@
 		text-anchor: middle;
 		dominant-baseline: central;
 		pointer-events: none;
+		user-select: none;
 	}
 </style>
