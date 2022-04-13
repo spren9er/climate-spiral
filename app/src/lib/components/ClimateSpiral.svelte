@@ -3,7 +3,7 @@
 	import createCamera from 'regl-camera';
 	import reglLines from 'regl-gpu-lines';
 	import { min, max } from 'd3-array';
-	import { create, ortho, rotateZ } from 'gl-mat4';
+	import glmat4 from 'gl-mat4';
 
 	import { getContext } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
@@ -138,7 +138,7 @@
 				uniforms: {
 					width: (ctx, props) => ctx.pixelRatio * props.width,
 					projection: () => {
-						return ortho([], -1.0, 1.0, -1.0, 1.0, 0.01, 100.0);
+						return glmat4.ortho([], -1.0, 1.0, -1.0, 1.0, 0.01, 100.0);
 					},
 					rotateZ: regl.prop('rotateZ'),
 					currentIndex: regl.prop('currentIndex'),
@@ -226,7 +226,7 @@
 							maxAbsDiff,
 							numPoints,
 							trailLength,
-							rotateZ: rotateZ([], create(), angle)
+							rotateZ: glmat4.rotateZ([], glmat4.create(), angle)
 						}
 					]);
 				});
