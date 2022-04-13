@@ -103,15 +103,12 @@
 				>
 					<Svg>
 						<RadialChart />
+						<BarChart />
 					</Svg>
 
 					<WebGL>
 						<ClimateSpiral />
 					</WebGL>
-
-					<Svg>
-						<BarChart />
-					</Svg>
 				</LayerCake>
 			</div>
 
@@ -128,13 +125,12 @@
 				</p>
 
 				<p>
-					Above visualization is a remake of a spiral available at
-					<a href="https://svs.gsfc.nasa.gov/4975"
-						>https://svs.gsfc.nasa.gov/4975</a
-					>
-					and which was created by
-					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA SVS
-					in 2022. Description from original website:
+					Above visualization is a remake of a spiral created by
+					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA
+					SVS in 2022. It is available at
+					<a href="https://svs.gsfc.nasa.gov/4975">
+						https://svs.gsfc.nasa.gov/4975
+					</a>. Description from original website:
 				</p>
 
 				<p>

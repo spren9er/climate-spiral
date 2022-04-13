@@ -41,7 +41,7 @@
 		y2={$height / 2 + indicatorHeight}
 		stroke={$theme.legendColor}
 		stroke-width={indicatorHeight}
-		stroke-opacity={0.1}
+		stroke-opacity={0.3}
 	/>
 
 	<rect

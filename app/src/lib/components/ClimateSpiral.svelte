@@ -170,7 +170,9 @@
 			const index2000 = $data.findIndex((d) => d.fullYear == 2000);
 
 			regl.frame(async () => {
-				if ($rewind) $custom.currentIndex -= $speedFactor * 100;
+				if ($rewind) {
+					$custom.currentIndex -= $speedFactor * 100;
+				}
 
 				if ($custom.currentIndex < 0) {
 					$rewind = false;

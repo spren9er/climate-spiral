@@ -4,7 +4,7 @@
 
 <div id="dark-mode" style="--background-color: {$theme.color}">
 	{#if $theme.name == 'dark'}
-		<button on:click={() => ($theme = $themes.light)}>
+		<button on:click={() => ($theme = $themes.light)} title="Light Mode">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="14"
@@ -28,7 +28,7 @@
 			</svg>
 		</button>
 	{:else}
-		<button on:click={() => ($theme = $themes.dark)}>
+		<button on:click={() => ($theme = $themes.dark)} title="Dark Mode">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="14"

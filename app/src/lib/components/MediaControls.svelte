@@ -28,17 +28,23 @@
 </script>
 
 <div
-	style="--legend-color: {$theme.legendColor}; --background-color: {$theme.backgroundColor}"
+	style="--button-color: {$theme.buttonColor}; --background-color: {$theme.backgroundColor}"
 >
 	<div id="button-bar">
-		<button on:click={() => ($rewind = true)}>
+		<button
+			on:click={() => {
+				$rewind = true;
+				$play = true;
+			}}
+			title="Rewind"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
 				height="12"
 				viewBox="0 0 24 24"
 				fill="none"
-				stroke={$theme.legendColor}
+				stroke={$theme.buttonColor}
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -49,14 +55,14 @@
 			</svg>
 		</button>
 
-		<button on:click={() => ($prev = true)}>
+		<button on:click={() => ($prev = true)} title="Previous Frame">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
 				height="12"
 				viewBox="0 0 24 24"
 				fill="none"
-				stroke={$theme.legendColor}
+				stroke={$theme.buttonColor}
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -67,7 +73,14 @@
 			</svg>
 		</button>
 
-		<button class="play" on:click={() => ($play = !$play)}>
+		<button
+			class="play"
+			on:click={() => {
+				if ($rewind) $rewind = false;
+				$play = !$play;
+			}}
+			title="Play / Pause"
+		>
 			{#if $play}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +88,7 @@
 					height="12"
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke={$theme.legendColor}
+					stroke={$theme.buttonColor}
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -92,7 +105,7 @@
 					height="12"
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke={$theme.legendColor}
+					stroke={$theme.buttonColor}
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -104,14 +117,14 @@
 			{/if}
 		</button>
 
-		<button on:click={() => ($next = true)}>
+		<button on:click={() => ($next = true)} title="Next Frame">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
 				height="12"
 				viewBox="0 0 24 24"
 				fill="none"
-				stroke={$theme.legendColor}
+				stroke={$theme.buttonColor}
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -121,7 +134,7 @@
 			</svg>
 		</button>
 
-		<button on:click={() => switchSpeedFactor()}>
+		<button on:click={() => switchSpeedFactor()} title="Speed Factor">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
@@ -131,7 +144,7 @@
 					font-size="24"
 					x="12"
 					y="12"
-					fill={$theme.legendColor}
+					fill={$theme.buttonColor}
 					text-anchor="middle"
 					dominant-baseline="central"
 				>
@@ -148,10 +161,10 @@
 		height: 25px;
 		margin: 2px;
 		background: var(--background-color);
-		border: 1px solid var(--legend-color);
+		border: 1px solid var(--button-color);
 		border-radius: 3px;
 		cursor: pointer;
-		color: var(--legend-color);
+		color: var(--button-color);
 	}
 
 	button.play {

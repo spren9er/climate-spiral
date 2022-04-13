@@ -5,13 +5,15 @@ const _themes = {
 		name: 'light',
 		backgroundColor: '#fafafa',
 		color: '#777777',
-		legendColor: '#cccccc'
+		legendColor: '#cccccc',
+		buttonColor: '#cccccc'
 	},
 	dark: {
 		name: 'dark',
 		backgroundColor: '#333333',
 		color: '#efefef',
-		legendColor: '#cccccc'
+		legendColor: '#cccccc',
+		buttonColor: '#cccccc'
 	}
 };
 
