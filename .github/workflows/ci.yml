@@ -1,0 +1,66 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17.x'
+          cache: 'npm'
+          cache-dependency-path: 'app/package-lock.json'
+
+      - name: NPM Install
+        run: npm install
+        working-directory: app
+
+      - name: NPM Build
+        run: npm run build
+        working-directory: app
+
+      - name: Login Github Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: Build & Push Image
+        uses: docker/build-push-action@v2
+        with:
+          file: .docker/Dockerfile
+          context: .
+          push: true
+          tags: ghcr.io/spren9er/climate-spiral:latest
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
+          chmod 600 ~/.ssh/private.key
+          cat >> ~/.ssh/config <<CONFIG
+          Host climate-spiral
+            Hostname $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/private.key
+            StrictHostKeyChecking no
+          CONFIG
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_HOST: ${{secrets.SSH_HOST}}
+          SSH_USER: ${{secrets.SSH_USER}}
+
+      - name: Pull Image (via SSH)
+        run: ssh climate-spiral 'cat ~/.github_token | docker login ghcr.io -u spren9er --password-stdin && docker pull ghcr.io/spren9er/climate-spiral:latest'
+
+      - name: Deploy (via SSH)
+        run: ssh climate-spiral 'cd ~/sites/climate-spiral && docker-compose up --force-recreate -d && docker image prune -f'
