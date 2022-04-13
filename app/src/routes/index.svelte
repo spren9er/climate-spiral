@@ -57,7 +57,7 @@
 
 	const initialContext = {
 		speedFactor: writable(1),
-		speedIcon: writable('4'),
+		speedIcon: writable('1'),
 		play: writable(false),
 		next: writable(false),
 		prev: writable(false),

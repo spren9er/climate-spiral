@@ -9,19 +9,23 @@
 		switch ($speedFactor) {
 			case 0.25:
 				$speedFactor = 0.5;
-				$speedIcon = '2';
+				$speedIcon = '½';
 				break;
 			case 0.5:
 				$speedFactor = 1;
-				$speedIcon = '4';
+				$speedIcon = '1';
 				break;
 			case 1:
 				$speedFactor = 2;
-				$speedIcon = '8';
+				$speedIcon = '2';
 				break;
 			case 2:
+				$speedFactor = 4;
+				$speedIcon = '4';
+				break;
+			case 4:
 				$speedFactor = 0.25;
-				$speedIcon = '1';
+				$speedIcon = '¼';
 				break;
 		}
 	};
@@ -32,6 +36,7 @@
 >
 	<div id="button-bar">
 		<button
+			class="btn-rewind"
 			on:click={() => {
 				$rewind = true;
 				$play = true;
@@ -55,7 +60,11 @@
 			</svg>
 		</button>
 
-		<button on:click={() => ($prev = true)} title="Previous Frame">
+		<button
+			class="btn-prev"
+			on:click={() => ($prev = true)}
+			title="Previous Frame"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
@@ -74,7 +83,7 @@
 		</button>
 
 		<button
-			class="play"
+			class="btn-play"
 			on:click={() => {
 				if ($rewind) $rewind = false;
 				$play = !$play;
@@ -97,7 +106,7 @@
 					<rect x="6" y="4" width="4" height="16" />
 					<rect x="14" y="4" width="4" height="16" />
 				</svg>
-				PAUSE
+				<span class="text">PAUSE</span>
 			{:else}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +122,11 @@
 				>
 					<polygon points="5 3 19 12 5 21 5 3" />
 				</svg>
-				PLAY
+				<span class="text">PLAY</span>
 			{/if}
 		</button>
 
-		<button on:click={() => ($next = true)} title="Next Frame">
+		<button class="btn-next" on:click={() => ($next = true)} title="Next Frame">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
@@ -134,14 +143,17 @@
 			</svg>
 		</button>
 
-		<button on:click={() => switchSpeedFactor()} title="Speed Factor">
+		<button
+			class="btn-speed-factor"
+			on:click={() => switchSpeedFactor()}
+			title="Speed Factor"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="12"
 				height="12"
 				viewBox="0 0 24 24"
 				><text
-					font-size="24"
 					x="12"
 					y="12"
 					fill={$theme.buttonColor}
@@ -157,9 +169,10 @@
 
 <style>
 	button {
-		width: 27px;
-		height: 25px;
+		width: 28px;
+		height: 26px;
 		margin: 2px;
+		padding: 0;
 		background: var(--background-color);
 		border: 1px solid var(--button-color);
 		border-radius: 3px;
@@ -167,12 +180,45 @@
 		color: var(--button-color);
 	}
 
-	button.play {
+	button svg {
+		margin: 3px 0 0 4px;
+		width: 12px;
+		height: 12px;
+		padding: 0;
+	}
+
+	button.btn-play {
 		width: 76px;
 	}
 
-	button svg {
+	button.btn-play .text {
 		position: relative;
-		top: 2px;
+		top: -2px;
+		font-size: 11px;
+		line-height: 11px;
+	}
+
+	button.btn-play svg {
+		margin-left: 0;
+	}
+
+	button.btn-rewind svg {
+		padding-right: 4px;
+	}
+
+	button.btn-prev svg {
+		padding-right: 3px;
+	}
+
+	button.btn-next svg {
+		padding-right: 1px;
+	}
+
+	button.btn-speed-factor svg {
+		padding-right: 4px;
+	}
+
+	button.btn-speed-factor text {
+		font-size: 20px;
 	}
 </style>
