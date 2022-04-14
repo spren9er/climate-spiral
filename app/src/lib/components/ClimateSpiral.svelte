@@ -230,7 +230,7 @@
 					const slope = ($custom.currentIndex - numPoints - pause + 1) / 2400;
 					const rotate = min([slope, 1.0]);
 					theta = ((1 + cubicInOut(rotate)) * Math.PI) / 2;
-					angle = 2 * slope * Math.PI;
+					angle = -2 * slope * Math.PI;
 					camera.update({ theta });
 				}
 

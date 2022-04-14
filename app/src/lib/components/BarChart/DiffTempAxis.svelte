@@ -6,10 +6,9 @@
 
 	const { width, height } = getContext('LayerCake');
 
-	const yFactor = 1.0;
 	const yScale = scaleLinear()
 		.domain([-4, 4])
-		.range([(-yFactor * $height) / 2, (yFactor * $height) / 2]);
+		.range([-$height / 2, $height / 2]);
 </script>
 
 <g style="--legend-color: {$theme.legendColor}">
@@ -21,8 +20,8 @@
 			y2={$height / 2 + yScale(y)}
 		/>
 
-		<text dx={18} x={(9 / 10) * $width} y={$height / 2 + yScale(y)}
-			>{label}</text
+		<text dx={21} dy={-1} x={(9 / 10) * $width} y={$height / 2 + yScale(y)}
+			>{label}°</text
 		>
 	{/each}
 </g>

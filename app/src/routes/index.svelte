@@ -130,7 +130,7 @@
 				</p>
 
 				<p>
-					Above visualization is a remake of a spiral created by
+					Above visualization is a remake of a climate spiral created by
 					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA
 					SVS in 2022. It is available at
 					<a href="https://svs.gsfc.nasa.gov/4975">

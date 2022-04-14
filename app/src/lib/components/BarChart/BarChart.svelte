@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 
 	import DiffTempAxis from './DiffTempAxis.svelte';
+	import Grid from './Grid.svelte';
 	import YearAxis from './YearAxis.svelte';
 
 	const { data, custom } = getContext('LayerCake');
@@ -13,6 +14,7 @@
 
 {#if $custom.currentIndex >= $data.length + 5 * pause}
 	<g transition:fade={{ duration: 400 }}>
+		<Grid />
 		<YearAxis />
 		<DiffTempAxis />
 	</g>
