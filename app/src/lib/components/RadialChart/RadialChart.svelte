@@ -4,6 +4,7 @@
 
 	import MonthLabels from './MonthLabels.svelte';
 	import RadialAxis from './RadialAxis.svelte';
+	import RadialGrid from './RadialGrid.svelte';
 	import YearLabel from './YearLabel.svelte';
 	import YearIndicator from './YearIndicator.svelte';
 
@@ -15,7 +16,10 @@
 
 {#if $custom.currentIndex < $data.length + pause}
 	<g transition:fade={{ duration: 400 }}>
+		<RadialGrid />
+
 		<MonthLabels r={1.4} />
+
 		<RadialAxis r={-1} label={'-1°'} />
 		<RadialAxis r={0} label={'0°'} />
 		<RadialAxis r={1} label={'+1°'} />

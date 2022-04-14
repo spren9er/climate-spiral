@@ -8,6 +8,7 @@
 	const { width, height } = getContext('LayerCake');
 
 	const patternWidth = 4;
+	const padding = 2;
 	const cy1 = (3 * $height) / 4;
 	const cy2 = (1 * $height) / 4;
 	const xScale = scaleLinear().range([(1 / 10) * $width, (9 / 10) * $width]);
@@ -33,7 +34,7 @@
 			y1="0"
 			x2="0"
 			y2={patternWidth}
-			style="stroke: var(--legend-color); stroke-width:1"
+			style="stroke: var(--legend-color); stroke-width: 1"
 		/>
 	</pattern>
 
@@ -49,45 +50,83 @@
 			y1="0"
 			x2="0"
 			y2={patternWidth}
-			style="stroke: var(--legend-color); stroke-width:1"
+			style="stroke: var(--legend-color); stroke-width: 1"
 		/>
 	</pattern>
 
 	<rect
 		x={xScale(0)}
-		y={rect1Y[0]}
+		y={rect1Y[0] + padding}
 		width={xScale(1) - xScale(0)}
-		height={rect1Y[1] - rect1Y[0]}
+		height={rect1Y[1] - rect1Y[0] - 2 * padding}
 		fill="url(#diagonalLTR)"
 	/>
 
 	<rect
 		x={xScale(0)}
-		y={rect1Y[0]}
+		y={rect1Y[0] + padding}
 		width={xScale(1) - xScale(0)}
-		height={rect1Y[1] - rect1Y[0]}
+		height={rect1Y[1] - rect1Y[0] - 2 * padding}
 		fill="url(#diagonalRTL)"
 	/>
 
 	<rect
 		x={xScale(0)}
-		y={rect2Y[0]}
+		y={rect2Y[0] + padding}
 		width={xScale(1) - xScale(0)}
-		height={rect2Y[1] - rect2Y[0]}
+		height={rect2Y[1] - rect2Y[0] - 2 * padding}
 		fill="url(#diagonalLTR)"
 	/>
 
 	<rect
 		x={xScale(0)}
-		y={rect2Y[0]}
+		y={rect2Y[0] + padding}
 		width={xScale(1) - xScale(0)}
-		height={rect2Y[1] - rect2Y[0]}
+		height={rect2Y[1] - rect2Y[0] - 2 * padding}
 		fill="url(#diagonalRTL)"
+	/>
+
+	<line
+		class="border"
+		x1={xScale(0)}
+		x2={xScale(1)}
+		y1={rect1Y[0] + padding}
+		y2={rect1Y[0] + padding}
+	/>
+
+	<line
+		class="border"
+		x1={xScale(0)}
+		x2={xScale(1)}
+		y1={rect1Y[1] - padding}
+		y2={rect1Y[1] - padding}
+	/>
+
+	<line
+		class="border"
+		x1={xScale(0)}
+		x2={xScale(1)}
+		y1={rect2Y[0] + padding}
+		y2={rect2Y[0] + padding}
+	/>
+
+	<line
+		class="border"
+		x1={xScale(0)}
+		x2={xScale(1)}
+		y1={rect2Y[1] - padding}
+		y2={rect2Y[1] - padding}
 	/>
 </g>
 
 <style>
 	rect {
 		fill-opacity: 0.25;
+	}
+
+	line.border {
+		stroke-width: 1;
+		stroke: var(--legend-color);
+		stroke-opacity: 0.1;
 	}
 </style>

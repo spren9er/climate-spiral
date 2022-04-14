@@ -40,6 +40,7 @@
 			float diff = data.w;
 			float theta = data.y - PI / 2.0;
 			float radius = data.z;
+			float opacity = 1.0;
 			float pause = 0.5 * trailLength;
 
 			float x = radius * cos(theta);
@@ -48,6 +49,13 @@
 			float zScale = 0.01;
 
 			if (currentIndex <= numPoints + pause) {
+				float border = min(currentIndex, numPoints);
+				opacity = pow(smoothstep(border - trailLength, border, index), 0.25);
+
+				if (opacity > 0.0) {
+					if (step(diffThreshold, abs(diff)) == 0.0) return vec4(nan);
+				};
+
 				if (index > currentIndex) return vec4(nan);
 			};
 
@@ -81,6 +89,10 @@
 			if (currentIndex <= numPoints + pause) {
 				float border = min(currentIndex, numPoints);
 				opacity = pow(smoothstep(border - trailLength, border, index), 0.25);
+
+				if (opacity > 0.0) {
+					opacity = step(diffThreshold, abs(diff));
+				};
 
 				if (index > currentIndex) opacity = 0.0;
 			}
