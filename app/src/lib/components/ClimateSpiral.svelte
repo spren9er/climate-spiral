@@ -59,7 +59,7 @@
 				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
 				float opacity = step(threshold, index);
 				if (opacity == 1.0) {
-					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.25));
+					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.5));
 				};
 				if (opacity == 0.0) return vec4(nan);
 			}
@@ -90,7 +90,7 @@
 				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
 				opacity = step(threshold, index);
 				if (opacity == 1.0) {
-					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.25));
+					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.5));
 				};
 			};
 

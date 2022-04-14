@@ -1,13 +1,14 @@
 <script>
 	import { getContext } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	import { theme } from '$lib/stores/theme';
 	import { alpha } from '$lib/stores/alpha';
 
 	let hidden = true;
-	let timer = 0;
-	let opTimer =
+	let strength = 10;
+	let direction = -1;
+	let clicked = false;
 
 	const { data, custom, height } = getContext('LayerCake');
 
@@ -22,26 +23,13 @@
 		);
 	};
 
-	const handleMouseDownClick = () => {
-		timer = Date.now();
-	};
-
-	const handleDownClick = () => {
-		const duration = Date.now() - timer;
-
-		$alpha = Math.min($alpha + (duration * 25) / 1000, 100);
-	};
-
-	const handleUpClick = () => {
-		const duration = Date.now() - timer;
-
-		$alpha = Math.max($alpha - (duration * 25) / 1000, 0);
+	const handleClick = (event) => {
+		direction = event.target.id === 'opacity-up' ? -1 : 1;
+		$alpha = Math.min(Math.max($alpha + direction * strength, 0), 100);
 	};
 
 	const show = () => (hidden = false);
 	const hide = () => (hidden = true);
-
-	$: hidden;
 </script>
 
 {#if !isTouchDevice() && $custom.currentIndex >= $data.length + 5 * pause}
@@ -74,17 +62,14 @@
 						height="24"
 						fill="transparent"
 						stroke="none"
-						on:mousedown={handleMouseDownClick}
-						on:mouseup={handleUpClick}
+						on:mousedown={handleClick}
 						on:mouseover={show}
 					/>
 				</g>
 
-				{#key $alpha}
-					<text x="36" y="2" on:mouseover={show}>
-						{(100 - $alpha).toFixed(1)}%
-					</text>
-				{/key}
+				<text x="30" y="2" on:mouseover={show} fill-opacity={clicked ? 0.5 : 1}>
+					{(100 - $alpha).toFixed(0)}%
+				</text>
 
 				<g transform="translate(0, 28)">
 					<circle cx="12" cy="12" r="10" />
@@ -98,8 +83,7 @@
 						height="24"
 						fill="transparent"
 						stroke="none"
-						on:mousedown={handleMouseDownClick}
-						on:mouseup={handleDownClick}
+						on:mousedown={handleClick}
 						on:mouseover={show}
 					/>
 				</g>
@@ -124,11 +108,13 @@
 	}
 
 	text {
+		font-size: 15px;
 		fill: var(--legend-color);
 		text-anchor: end;
 		alignment-baseline: middle;
 		cursor: default;
 		user-select: none;
+		pointer-events: none;
 	}
 
 	#opacity-up,
