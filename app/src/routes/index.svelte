@@ -198,13 +198,15 @@
 	}
 
 	p {
-		width: 500px;
-		margin: 5px 0;
-		font-size: 13px;
+		width: 560px;
+		margin: 10px 0;
+		font-size: 14px;
+		line-height: 18px;
 		color: var(--color);
-		margin-left: -250px;
+		margin-left: -280px;
 		left: 50%;
 		position: relative;
+		text-align: left;
 		-webkit-text-size-adjust: none;
 	}
 
@@ -235,7 +237,7 @@
 
 	#twitter-handle a,
 	#twitter-handle a:visited {
-		font-size: 10px;
+		font-size: 11px;
 		font-weight: bold;
 		text-decoration: none;
 		color: var(--color);

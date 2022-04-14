@@ -7,32 +7,33 @@
 
 	let hidden = true;
 	let timer = 0;
+	let opTimer =
 
-	const { data, custom, width, height } = getContext('LayerCake');
+	const { data, custom, height } = getContext('LayerCake');
 
 	const trailLength = $data.findIndex((d) => d.fullYear == 1890); // ten years trail
 	const pause = 0.5 * trailLength;
 
-	const getNow = () => {
-		return Date.now();
-	};
-
-	const isMobile = () => {
-		return /Mobi|Android/i.test(navigator.userAgent);
+	const isTouchDevice = () => {
+		return (
+			'ontouchstart' in window ||
+			navigator.maxTouchPoints > 0 ||
+			navigator.msMaxTouchPoints > 0
+		);
 	};
 
 	const handleMouseDownClick = () => {
-		timer = getNow();
+		timer = Date.now();
 	};
 
 	const handleDownClick = () => {
-		const duration = getNow() - timer;
+		const duration = Date.now() - timer;
 
 		$alpha = Math.min($alpha + (duration * 25) / 1000, 100);
 	};
 
 	const handleUpClick = () => {
-		const duration = getNow() - timer;
+		const duration = Date.now() - timer;
 
 		$alpha = Math.max($alpha - (duration * 25) / 1000, 0);
 	};
@@ -43,10 +44,10 @@
 	$: hidden;
 </script>
 
-{#if !isMobile() && $custom.currentIndex >= $data.length + 5 * pause}
+{#if !isTouchDevice() && $custom.currentIndex >= $data.length + 5 * pause}
 	<g
 		style="--legend-color: {$theme.legendColor}"
-		transform="translate(15, {$height / 2}) scale(0.8)"
+		transform="translate(30, {$height / 2}) scale(0.8)"
 	>
 		<rect
 			x="-13"

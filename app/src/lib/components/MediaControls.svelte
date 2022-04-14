@@ -168,6 +168,10 @@
 </div>
 
 <style>
+	#button-bar {
+		margin: -6px 0 6px 0;
+	}
+
 	button {
 		width: 28px;
 		height: 26px;
