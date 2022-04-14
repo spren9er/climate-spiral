@@ -8,7 +8,7 @@
 	import { getContext } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 
-	import { alpha } from '$lib/stores/alpha';
+	import { diffThreshold } from '$lib/stores/diffThreshold';
 
 	const { data, width, height, custom, xGet, yGet } = getContext('LayerCake');
 	const { speedFactor, play, next, prev, rewind } = getContext('MediaControls');
@@ -28,7 +28,7 @@
 		precision highp float;
 
 		uniform mat4 projection, rotateZ, view;
-    uniform float width, currentIndex, maxAbsDiff, numPoints, trailLength, alpha, nan;
+    uniform float width, currentIndex, maxAbsDiff, numPoints, trailLength, diffThreshold, nan;
 
     #pragma lines: attribute vec4 data;
 		#pragma lines: position = getPosition(data);
@@ -59,7 +59,7 @@
 				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
 				float opacity = step(threshold, index);
 				if (opacity == 1.0) {
-					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.5));
+					opacity = step(diffThreshold, abs(diff));
 				};
 				if (opacity == 0.0) return vec4(nan);
 			}
@@ -90,7 +90,7 @@
 				float threshold = x * (1.0 - smoothstep(numPoints + pause, numPoints + pause + 2.0 * trailLength, currentIndex));
 				opacity = step(threshold, index);
 				if (opacity == 1.0) {
-					opacity = step(alpha, pow(smoothstep(0.0, maxAbsDiff, abs(diff)), 0.5));
+					opacity = step(diffThreshold, abs(diff));
 				};
 			};
 
@@ -162,7 +162,7 @@
 					maxAbsDiff: regl.prop('maxAbsDiff'),
 					numPoints: regl.prop('numPoints'),
 					trailLength: regl.prop('trailLength'),
-					alpha: regl.prop('alpha'),
+					diffThreshold: regl.prop('diffThreshold'),
 					nan: NaN
 				},
 				blend: {
@@ -247,7 +247,7 @@
 							numPoints,
 							trailLength,
 							rotateZ: glmat4.rotateZ([], glmat4.create(), angle),
-							alpha: $alpha / 100
+							diffThreshold: $diffThreshold / 10
 						}
 					]);
 				});

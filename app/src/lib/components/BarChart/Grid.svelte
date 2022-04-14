@@ -1,24 +1,21 @@
 <script>
 	import { getContext } from 'svelte';
-	import { alpha } from '$lib/stores/alpha';
+	import { diffThreshold } from '$lib/stores/diffThreshold';
 	import { theme } from '$lib/stores/theme';
 
-	import { max } from 'd3-array';
-	import { scaleLinear, scaleSqrt } from 'd3-scale';
+	import { scaleLinear } from 'd3-scale';
 
-	const { data, width, height } = getContext('LayerCake');
+	const { width, height } = getContext('LayerCake');
 
 	const patternWidth = 4;
 	const cy1 = (3 * $height) / 4;
 	const cy2 = (1 * $height) / 4;
-	const maxAbsDiff = max($data, (d) => Math.abs(d.diffTemp));
 	const xScale = scaleLinear().range([(1 / 10) * $width, (9 / 10) * $width]);
-	const yScale1 = scaleSqrt().domain([0, maxAbsDiff]).range([0, 1]);
-	const yScale2 = scaleLinear()
+	const yScale = scaleLinear()
 		.domain([0, 4])
 		.range([0, $height / 2]);
 
-	$: yThreshold = yScale2(yScale1.invert($alpha / 100));
+	$: yThreshold = yScale($diffThreshold / 10);
 	$: rect1Y = [cy1 - yThreshold, cy1 + yThreshold];
 	$: rect2Y = [cy2 - yThreshold, cy2 + yThreshold];
 </script>

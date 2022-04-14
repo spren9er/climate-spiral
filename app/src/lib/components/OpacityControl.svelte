@@ -2,18 +2,21 @@
 	import { getContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 
+	import { max } from 'd3-array';
+
 	import { theme } from '$lib/stores/theme';
-	import { alpha } from '$lib/stores/alpha';
+	import { diffThreshold } from '$lib/stores/diffThreshold';
 
 	let hidden = true;
-	let strength = 10;
-	let direction = -1;
+	let strength = 1;
+	let direction = 1;
 	let clicked = false;
 
 	const { data, custom, height } = getContext('LayerCake');
 
 	const trailLength = $data.findIndex((d) => d.fullYear == 1890); // ten years trail
 	const pause = 0.5 * trailLength;
+	const maxAbsDiff = max($data, (d) => Math.abs(d.diffTemp));
 
 	const isTouchDevice = () => {
 		return (
@@ -24,8 +27,11 @@
 	};
 
 	const handleClick = (event) => {
-		direction = event.target.id === 'opacity-up' ? -1 : 1;
-		$alpha = Math.min(Math.max($alpha + direction * strength, 0), 100);
+		direction = event.target.id === 'opacity-up' ? 1 : -1;
+		$diffThreshold = Math.min(
+			Math.max($diffThreshold + direction * strength, 0),
+			Math.ceil(maxAbsDiff * 10)
+		);
 	};
 
 	const show = () => (hidden = false);
@@ -67,8 +73,8 @@
 					/>
 				</g>
 
-				<text x="30" y="2" on:mouseover={show} fill-opacity={clicked ? 0.5 : 1}>
-					{(100 - $alpha).toFixed(0)}%
+				<text x="36" y="2" on:mouseover={show} fill-opacity={clicked ? 0.5 : 1}>
+					± {($diffThreshold / 10).toFixed(2)}°
 				</text>
 
 				<g transform="translate(0, 28)">
