@@ -76,7 +76,7 @@
 			fill="url(#diagonalRTL)"
 			fill-opacity="0.25"
 			stroke={$theme.legendColor}
-			stroke-opacity="0.1"
+			stroke-opacity="0.25"
 		/>
 
 		<circle
@@ -86,7 +86,7 @@
 			fill={$theme.backgroundColor}
 			fill-opacity="1.0"
 			stroke={$theme.legendColor}
-			stroke-opacity="0.1"
+			stroke-opacity="0.25"
 		/>
 	</g>
 {/if}
