@@ -15,7 +15,6 @@
 	import MediaControls from '$lib/components/MediaControls.svelte';
 	import OpacityControl from '$lib/components/OpacityControl.svelte';
 	import RadialChart from '$lib/components/RadialChart/RadialChart.svelte';
-	import Spinner from '$lib/components/Spinner.svelte';
 
 	async function load() {
 		async function csv(url, stepSize) {
@@ -76,9 +75,7 @@
 	{/if}
 </svelte:head>
 
-{#await load()}
-	<Spinner />
-{:then data}
+{#await load() then data}
 	<div
 		id="wrapper"
 		style="--color: {$theme.color}; --background-color: {$theme.backgroundColor}"
