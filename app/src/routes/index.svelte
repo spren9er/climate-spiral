@@ -131,10 +131,10 @@
 					Above visualization is an interactive version of a climate spiral
 					created by
 					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA
-					SVS in 2022. It is available at
+					SVS in March 2022. The original version is available at
 					<a href="https://svs.gsfc.nasa.gov/4975">
 						https://svs.gsfc.nasa.gov/4975
-					</a>. Description from original website:
+					</a>. Description from website:
 				</p>
 
 				<p>
@@ -152,32 +152,35 @@
 				</p>
 
 				<p>
-					The climate spiral has been modified in several ways in comparison to
-					the orginal:
+					The present climate spiral has been modified in several ways in
+					comparison to its orginal:
 				</p>
 
 				<h4>Radial Chart</h4>
 
 				<ul>
-					<li>Starting from year 2000 animation slows down a little bit</li>
 					<li>
-						A diverging color scale with two linear gradients (blue to white,
+						A diverging color scale with two linear gradients (blue to white and
 						white to red) is used
 					</li>
 					<li>
-						Average temperature difference per year is added and shown in the
-						center of the chart
+						Average temperature difference per year is shown in the center of
+						the chart
 					</li>
 					<li>
-						Only last ten years are taken into account when displaying lines
+						Only last ten years are taken into account when animating lines
 						(older ones are faded out)
+					</li>
+					<li>
+						Starting from year 2000 animation slows down slightly to emphasize
+						the more recent development
 					</li>
 				</ul>
 
 				<h4>Time Series</h4>
 
 				<ul>
-					<li>Animation doesn't stop and spiral keeps on rotating</li>
+					<li>Animation does not stop and spiral keeps on rotating</li>
 					<li>
 						Chart has been rotated by 90 degrees (showing years on x-axis and
 						temperature differences on y-axis)
@@ -185,16 +188,18 @@
 				</ul>
 
 				<p>
-					One can control the animation by standard media controls. It is
-					possible to change the speed factor (ranging from ¼x to 4x) to slow
-					down or accelerate the animation. Additionally, one can go through the
-					animation stepwise by clicking on left and right arrow buttons.
+					One can control the animation by standard media controls (play, pause,
+					rewind). It is possible to change the speed factor (ranging from ¼x to
+					4x) to slow down or accelerate the animation. Additionally, one can go
+					through the animation stepwise by clicking on left and right arrow
+					buttons.
 				</p>
 
 				<p>
-					Also, for both charts there is a threshold parameter available on the
-					left hand side to exclude some lines which are close to the baseline
-					in order to focus on extreme values (not available on mobile phones).
+					Also, for both projections there is a threshold parameter available on
+					the left hand side to exclude lines which are close to the baseline.
+					This setting can help to put more focus on extreme values (not
+					available for mobile phones).
 				</p>
 
 				<p>
@@ -240,7 +245,7 @@
 		padding: 0;
 		color: var(--color);
 		text-align: center;
-		padding-top: 50px;
+		padding-top: 70px;
 		font-size: 44px;
 		font-weight: normal;
 	}
@@ -252,12 +257,12 @@
 	p,
 	h4,
 	ul {
-		width: 560px;
+		width: 570px;
 		margin: 10px 0;
-		font-size: 14px;
+		font-size: 13px;
 		line-height: 18px;
 		color: var(--color);
-		margin-left: -280px;
+		margin-left: -285px;
 		left: 50%;
 		position: relative;
 		text-align: left;
@@ -298,7 +303,7 @@
 
 	#twitter-handle {
 		text-align: center;
-		padding: 10px 0 20px 0;
+		padding: 10px 0 25px 0;
 	}
 
 	#twitter-handle a,
