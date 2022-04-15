@@ -126,11 +126,13 @@
 					The <i>Climate Spiral</i> is a data visualization originally designed
 					by climate scientist
 					<a href="https://twitter.com/ed_hawkins">Ed Hawkins</a>
-					from the National Centre for Atmospheric Science, University of Reading.
+					from the National Centre for Atmospheric Science, University of Reading
+					in 2016.
 				</p>
 
 				<p>
-					Above visualization is a remake of a climate spiral created by
+					Above visualization is an interactive version of a climate spiral
+					created by
 					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA
 					SVS in 2022. It is available at
 					<a href="https://svs.gsfc.nasa.gov/4975">
@@ -139,15 +141,68 @@
 				</p>
 
 				<p>
-					The visualization presents monthly global temperature anomalies
-					between the years 1880-2021. These temperatures are based on the GISS
-					Surface Temperature Analysis (GISTEMP v4), an estimate of global
-					surface temperature change. Anomalies are defined relative to a base
-					period of 1951-1980. The data file used to create this visualization
-					can be accessed <a
-						href="https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
-						>here</a
-					>.
+					<i
+						>The visualization presents monthly global temperature anomalies
+						between the years 1880-2021. These temperatures are based on the
+						GISS Surface Temperature Analysis (GISTEMP v4), an estimate of
+						global surface temperature change. Anomalies are defined relative to
+						a base period of 1951-1980. The data file used to create this
+						visualization can be accessed <a
+							href="https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+							>here</a
+						>.
+					</i>
+				</p>
+
+				<p>
+					The climate spiral has been modified in several ways in comparison to
+					the orginal:
+				</p>
+
+				<h4>Radial Chart</h4>
+
+				<ul>
+					<li>Starting from year 2000 animation slows down a little bit</li>
+					<li>
+						A diverging color scale with two linear gradients (blue to white,
+						white to red) is used
+					</li>
+					<li>
+						Average temperature difference per year is added and shown in the
+						center of the chart
+					</li>
+					<li>
+						Only last ten years are taken into account when displaying lines
+						(older ones are faded out)
+					</li>
+				</ul>
+
+				<h4>Time Series</h4>
+
+				<ul>
+					<li>Animation doesn't stop and spiral keeps on rotating</li>
+					<li>
+						Chart has been rotated by 90 degrees (showing years on x-axis and
+						temperature differences on y-axis)
+					</li>
+				</ul>
+
+				<p>
+					One can control the animation by standard media controls. It is
+					possible to change the speed factor (ranging from ¼x to 4x) to slow
+					down or accelerate the animation. Additionally, one can go through the
+					animation stepwise by clicking on left and right arrow buttons.
+				</p>
+
+				<p>
+					Also, for both charts there is a threshold parameter available on the
+					left hand side to exclude some lines which are close to the baseline
+					in order to focus on extreme values (not available on mobile phones).
+				</p>
+
+				<p>
+					Finally, one can switch between dark and light mode on the top right
+					corner.
 				</p>
 			</div>
 
@@ -197,7 +252,9 @@
 		margin: 20px 0;
 	}
 
-	p {
+	p,
+	h4,
+	ul {
 		width: 560px;
 		margin: 10px 0;
 		font-size: 14px;
@@ -210,9 +267,21 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	ul {
+		padding-left: 20px;
+	}
+
+	ul li {
+		width: 540px;
+	}
+
 	p a,
 	p a:visited {
 		color: var(--color);
+		font-weight: bold;
+	}
+
+	h4 {
 		font-weight: bold;
 	}
 
