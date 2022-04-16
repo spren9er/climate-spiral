@@ -172,7 +172,7 @@
 						(older ones are faded out)
 					</li>
 					<li>
-						Starting from year 2000 animation slows down slightly to emphasize
+						Starting from year 2000, animation slows down slightly to emphasize
 						the more recent development
 					</li>
 				</ul>
@@ -197,9 +197,9 @@
 
 				<p>
 					Also, for both projections there is a threshold parameter available on
-					the left hand side to exclude lines which are close to the baseline.
-					This setting can help to put more focus on extreme values (not
-					available for mobile phones).
+					the left hand side to exclude lines which are close to the baseline
+					(not available for mobile phones). It is helpful if one wants to put
+					more focus on extreme values.
 				</p>
 
 				<p>

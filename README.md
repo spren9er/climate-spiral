@@ -6,7 +6,7 @@ The _Climate Spiral_ is a data visualization originally designed
 by climate scientist [Ed Hawkins](https://twitter.com/ed_hawkins)
 from the National Centre for Atmospheric Science, University of Reading in 2016.
 
-This visualization is an interactive version of a climate spiral available at [https://svs.gsfc.nasa.gov/4975](https://svs.gsfc.nasa.gov/4975) and which was created by [Mark SubbaRao](https://twitter.com/marksubbarao) and NASA SVS in 2022. Description from original website:
+This visualization is an interactive version of a climate spiral available at [https://svs.gsfc.nasa.gov/4975](https://svs.gsfc.nasa.gov/4975) and which was created by [Mark SubbaRao](https://twitter.com/marksubbarao) and NASA SVS in March 2022. Description from original website:
 
 _The visualization presents monthly global temperature anomalies
 between the years 1880-2021. These temperatures are based on the GISS
@@ -35,7 +35,6 @@ Also, for both charts there is a threshold parameter available on the left hand 
 
 Finally, one can switch between dark and light mode on the top right corner.
 
-
 ## #30DayChartChallenge 2022
 
 This project was done as part of _#30DayChartChallenge 2022_ covering
@@ -44,3 +43,54 @@ This project was done as part of _#30DayChartChallenge 2022_ covering
 - Day 22 (Time Series - Animation)
 
 It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.spren9er.de).
+
+### Tweet
+
+#### 1 (Introduction)
+
+```
+#30DayChartChallenge
+#Day19 TimeSeries - Global Change
+#Day22 TimeSeries - Animation
+
+Global Climate Spiral
+
+https://climate-spiral.spren9er.de
+
+[1/n]
+```
+
+1x animated gif showing whole animation from start to end (fast)
+
+#### 2 (Credit)
+
+```
+The climate spiral is a data visualization originally designed by @ed_hawkins in 2016.
+This visualization is an interactive version of a climate spiral created by @marksubbarao and NASA SVS in March 2022
+
+https://svs.gsfc.nasa.gov/4975
+
+[2/n]
+```
+
+#### 3 (Feature 1: Focus on Extreme Values)
+
+```
+[3/n]
+```
+
+#### 4 (Feature 2: Dark & Light Mode)
+
+```
+[4/n]
+```
+
+2x light mode image (radial chart and time series)
+
+#### 5 (Tech Stack)
+
+```
+Created with #svelte, #sveltekit, #d3, #layercake, #regl & #webgl
+
+[5/n]
+```
