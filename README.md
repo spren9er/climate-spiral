@@ -49,11 +49,11 @@ It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.s
 #### 1 (Introduction)
 
 ```
-#30DayChartChallenge
-#Day19 TimeSeries - Global Change
-#Day22 TimeSeries - Animation
-
 Global Climate Spiral
+
+#30DayChartChallenge
+#Day19 Time Series - Global Change
+#Day22 Time Series - Animation
 
 https://climate-spiral.spren9er.de
 
@@ -66,7 +66,7 @@ https://climate-spiral.spren9er.de
 
 ```
 The climate spiral is a data visualization originally designed by @ed_hawkins in 2016.
-This visualization is an interactive version of a climate spiral created by @marksubbarao and NASA SVS in March 2022
+This present visualization is an interactive version of a climate spiral created by @marksubbarao and NASA SVS in March 2022
 
 https://svs.gsfc.nasa.gov/4975
 
@@ -76,12 +76,19 @@ https://svs.gsfc.nasa.gov/4975
 #### 3 (Feature 1: Focus on Extreme Values)
 
 ```
+There are some additional features available compared to the original version.
+It is possible to hide lines which are close to the baseline in order to put more emphasis on extreme values (not available on mobile phones).
+
 [3/n]
 ```
+
+1x animated gif showing application of threshold parameter
 
 #### 4 (Feature 2: Dark & Light Mode)
 
 ```
+Additionally, there is also a light mode available
+
 [4/n]
 ```
 
@@ -90,7 +97,8 @@ https://svs.gsfc.nasa.gov/4975
 #### 5 (Tech Stack)
 
 ```
-Created with #svelte, #sveltekit, #d3, #layercake, #regl & #webgl
+Created with @sveltejs, #sveltekit, #d3, #layercake, #regl & #webgl
+@MadeWithSvelte @d3js_org
 
 [5/n]
 ```
