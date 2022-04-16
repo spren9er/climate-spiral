@@ -55,6 +55,8 @@ Global Climate Spiral
 #Day19 Time Series - Global Change
 #Day22 Time Series - Animation
 
+Full interactive visualization available at
+
 https://climate-spiral.spren9er.de
 
 [1/n]
