@@ -78,7 +78,7 @@
 {#await load() then data}
 	<div
 		id="wrapper"
-		style="--color: {$theme.color}; --background-color: {$theme.backgroundColor}"
+		style="--color: {$theme.color}; --background-color: {$theme.backgroundColor}; --legend-color: {$theme.legendColor}"
 	>
 		<DarkMode />
 
@@ -119,6 +119,10 @@
 			</div>
 
 			<div id="text">
+				<p id="last-update">
+					last updated on 2022/04/17 (data from 01/1880 to 03/2022)
+				</p>
+
 				<p>
 					The <i>Climate Spiral</i> is a data visualization originally designed
 					by climate scientist
@@ -206,10 +210,6 @@
 					Finally, one can switch between dark and light mode on the top right
 					corner.
 				</p>
-
-				<p id="last-update">
-					last updated on 2022/04/17 (data from 01/1880 to 03/2022)
-				</p>
 			</div>
 
 			<div id="twitter-handle">
@@ -289,8 +289,10 @@
 
 	p#last-update {
 		font-size: 10px;
-		color: var(--color);
+		color: var(--legend-color);
+		opacity: 0.5;
 		text-align: right;
+		border-top: 1px solid var(--legend-color);
 		font-style: italic;
 	}
 
