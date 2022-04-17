@@ -30,42 +30,30 @@
 		style="--legend-color: {$theme.legendColor}; --background-color: {$theme.backgroundColor}"
 	>
 		<pattern
-			id="diagonalLTR"
+			id="diagonalRadialLTR"
 			width={patternWidth}
 			height={patternWidth}
 			patternTransform="rotate(-45 0 0)"
 			patternUnits="userSpaceOnUse"
 		>
-			<line
-				x1="0"
-				y1="0"
-				x2="0"
-				y2={patternWidth}
-				style="stroke: var(--legend-color); stroke-width:1"
-			/>
+			<line x1="0" y1="0" x2="0" y2={patternWidth} />
 		</pattern>
 
 		<pattern
-			id="diagonalRTL"
+			id="diagonalRadialRTL"
 			width={patternWidth}
 			height={patternWidth}
 			patternTransform="rotate(45 0 0)"
 			patternUnits="userSpaceOnUse"
 		>
-			<line
-				x1="0"
-				y1="0"
-				x2="0"
-				y2={patternWidth}
-				style="stroke: var(--legend-color); stroke-width:1"
-			/>
+			<line x1="0" y1="0" x2="0" y2={patternWidth} />
 		</pattern>
 
 		<circle
 			{cx}
 			{cy}
 			r={outerRadius}
-			fill="url(#diagonalLTR)"
+			fill="url(#diagonalRadialLTR)"
 			fill-opacity="0.25"
 		/>
 
@@ -73,7 +61,7 @@
 			{cx}
 			{cy}
 			r={outerRadius}
-			fill="url(#diagonalRTL)"
+			fill="url(#diagonalRadialRTL)"
 			fill-opacity="0.25"
 			stroke={$theme.legendColor}
 			stroke-opacity="0.1"
@@ -90,3 +78,10 @@
 		/>
 	</g>
 {/if}
+
+<style>
+	pattern line {
+		stroke: var(--legend-color);
+		stroke-width: 1;
+	}
+</style>

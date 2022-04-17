@@ -29,13 +29,7 @@
 		patternTransform="rotate(45 0 0)"
 		patternUnits="userSpaceOnUse"
 	>
-		<line
-			x1="0"
-			y1="0"
-			x2="0"
-			y2={patternWidth}
-			style="stroke: var(--legend-color); stroke-width: 1"
-		/>
+		<line x1="0" y1="0" x2="0" y2={patternWidth} />
 	</pattern>
 
 	<pattern
@@ -45,13 +39,7 @@
 		patternTransform="rotate(-45 0 0)"
 		patternUnits="userSpaceOnUse"
 	>
-		<line
-			x1="0"
-			y1="0"
-			x2="0"
-			y2={patternWidth}
-			style="stroke: var(--legend-color); stroke-width: 1"
-		/>
+		<line x1="0" y1="0" x2="0" y2={patternWidth} />
 	</pattern>
 
 	<rect
@@ -128,5 +116,10 @@
 		stroke-width: 1;
 		stroke: var(--legend-color);
 		stroke-opacity: 0.1;
+	}
+
+	pattern line {
+		stroke: var(--legend-color);
+		stroke-width: 1;
 	}
 </style>
