@@ -2,7 +2,7 @@
 	import { getContext } from 'svelte';
 	import { theme } from '$lib/stores/theme';
 
-	import { isMobileDevice } from '$lib/utils/mobile';
+	import { isPhone } from '$lib/utils/mobile';
 
 	const { width, height, xScale } = getContext('LayerCake');
 
@@ -39,7 +39,7 @@
 </script>
 
 {#each monthLabels as { x, y, label }}
-	{#if isMobileDevice() || label !== 'Oct'}
+	{#if isPhone() || label !== 'Oct'}
 		<g style="--legend-color: {$theme.legendColor}">
 			<text x={cx + x} y={cy + y}>{label}</text>
 			<line

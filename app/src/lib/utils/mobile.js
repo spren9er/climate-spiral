@@ -1,5 +1,7 @@
-export const isMobileDevice = () => {
-	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-		navigator.userAgent
-	);
+import MobileDetect from 'mobile-detect';
+
+export const isPhone = () => {
+	const mobileDetect = new MobileDetect(navigator.userAgent);
+
+	return mobileDetect.phone();
 };

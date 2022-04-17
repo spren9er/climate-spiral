@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 
 	import { max } from 'd3-array';
-	import { isMobileDevice } from '$lib/utils/mobile';
+	import { isPhone } from '$lib/utils/mobile';
 
 	import { theme } from '$lib/stores/theme';
 	import { diffThreshold } from '$lib/stores/diffThreshold';
@@ -25,7 +25,7 @@
 	};
 </script>
 
-{#if !isMobileDevice()}
+{#if !isPhone()}
 	<g
 		style="--legend-color: {$theme.legendColor}"
 		transform="translate(30, {$height / 2}) scale(0.8)"

@@ -39,6 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.29",
-		"@types/d3-scale": "^4.0.2"
+		"@types/d3-scale": "^4.0.2",
+		"mobile-detect": "^1.4.5"
 	}
 }
