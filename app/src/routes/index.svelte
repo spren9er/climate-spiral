@@ -52,7 +52,7 @@
 			});
 		}
 
-		return await csv(`${assets}/data/nasa.csv`, 10);
+		return await csv(`${assets}/data/data.csv`, 10);
 	}
 
 	const initialContext = {
@@ -206,6 +206,10 @@
 					Finally, one can switch between dark and light mode on the top right
 					corner.
 				</p>
+
+				<p id="last-update">
+					last updated on 2022/04/17 (data from 01/1880 to 03/2022)
+				</p>
 			</div>
 
 			<div id="twitter-handle">
@@ -281,6 +285,13 @@
 	p a:visited {
 		color: var(--color);
 		font-weight: bold;
+	}
+
+	p#last-update {
+		font-size: 10px;
+		color: var(--color);
+		text-align: right;
+		font-style: italic;
 	}
 
 	h4 {
