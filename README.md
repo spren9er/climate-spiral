@@ -15,7 +15,7 @@ surface temperature change. Anomalies are defined relative to a base
 period of 1951-1980. The data file used to create this visualization
 can be accessed [here](https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv)._
 
-The climate spiral has been modified in several ways in comparison to the orginal:
+The climate spiral has been modified in several ways in comparison to the original:
 
 #### Radial Chart
 
@@ -62,13 +62,13 @@ https://climate-spiral.spren9er.de
 [1/n]
 ```
 
-1x animated gif showing whole animation from start to end (fast)
+- Animated climate spiral from 1880 to 2021 (tweet01.gif)
 
 #### 2 (Credit)
 
 ```
 The climate spiral is a data visualization originally designed by @ed_hawkins in 2016.
-This present visualization is an interactive version of a climate spiral created by @marksubbarao and NASA SVS in March 2022
+The present visualization is an interactive version of a climate spiral created by @marksubbarao and NASA SVS in March 2022
 
 https://svs.gsfc.nasa.gov/4975
 
@@ -84,7 +84,7 @@ It is possible to hide lines which are close to the baseline in order to put mor
 [3/n]
 ```
 
-1x animated gif showing application of threshold parameter
+- Animation of climate spiral while modifying threshold parameter for excluding lines close to baseline/mean (tweet03.gif)
 
 #### 4 (Feature 2: Dark & Light Mode)
 
@@ -94,7 +94,8 @@ Additionally, there is also a light mode available
 [4/n]
 ```
 
-2x light mode image (radial chart and time series)
+- Radial chart demonstrating light mode (tweet04a.png)
+- Time series chart demonstrating light mode (tweet04c.png)
 
 #### 5 (Tech Stack)
 

@@ -20,7 +20,7 @@
 		async function csv(url, stepSize) {
 			const response = await fetch(url, {
 				method: 'get',
-				headers: { 'content-type': 'text/csv;charset=UTF-8' }
+				headers: { 'content-type': 'text/csv;charset=UTF-8' },
 			});
 
 			const csvData = await response.text();
@@ -28,7 +28,7 @@
 				return {
 					year: +row.year,
 					month: +row.month,
-					diffTemp: +row.diff_temp
+					diffTemp: +row.diff_temp,
 				};
 			});
 
@@ -46,7 +46,7 @@
 						fullMonth: d.month,
 						year: d.year + yearStep,
 						month: d.month + monthStep - 1,
-						diffTemp: diffTempScale(monthStep)
+						diffTemp: diffTempScale(monthStep),
 					};
 				});
 			});
@@ -61,7 +61,7 @@
 		play: writable(false),
 		next: writable(false),
 		prev: writable(false),
-		rewind: writable(false)
+		rewind: writable(false),
 	};
 
 	setContext('MediaControls', initialContext);
@@ -157,7 +157,7 @@
 
 				<p>
 					The present climate spiral has been modified in several ways in
-					comparison to its orginal:
+					comparison to its original:
 				</p>
 
 				<h4>Radial Chart</h4>
