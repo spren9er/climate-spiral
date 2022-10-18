@@ -1,5 +1,7 @@
 # Global Climate Spiral
 
+![image](data/images/tweet01.gif "Global Climate Spiral")
+
 ## Introduction
 
 The _Climate Spiral_ is a data visualization originally designed
@@ -42,4 +44,4 @@ This project was done as part of _#30DayChartChallenge 2022_ covering
 - Day 19 (Time Series - Global Change)
 - Day 22 (Time Series - Animation)
 
-It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.spren9er.de).
+It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.spren9er.de). See also corresponding [tweet](https://twitter.com/spren9er/status/1516291303931322369).
