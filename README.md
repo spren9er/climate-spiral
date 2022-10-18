@@ -1,7 +1,5 @@
 # Global Climate Spiral
 
-![image](data/images/tweet01.gif "Global Climate Spiral")
-
 ## Introduction
 
 The _Climate Spiral_ is a data visualization originally designed
