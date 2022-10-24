@@ -1,5 +1,5 @@
 {
-	"name": "climate-change",
+	"name": "climate_spiral",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
