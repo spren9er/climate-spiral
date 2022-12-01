@@ -220,6 +220,62 @@
 {/await}
 
 <style>
+	/* bebas-neue-regular - latin */
+	@font-face {
+		font-family: 'Bebas Neue';
+		font-style: normal;
+		font-weight: 400;
+		src: url('../fonts/bebas-neue-v9-latin-regular.eot');
+		src: local(''),
+			url('../fonts/bebas-neue-v9-latin-regular.eot?#iefix')
+				format('embedded-opentype'),
+			url('../fonts/bebas-neue-v9-latin-regular.woff2') format('woff2'),
+			url('../fonts/bebas-neue-v9-latin-regular.woff') format('woff'),
+			url('../fonts/bebas-neue-v9-latin-regular.ttf') format('truetype'),
+			url('../fonts/bebas-neue-v9-latin-regular.svg#BebasNeue') format('svg');
+	}
+	/* lato-regular - latin */
+	@font-face {
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 400;
+		src: url('../fonts/lato-v23-latin-regular.eot');
+		src: local(''),
+			url('../fonts/lato-v23-latin-regular.eot?#iefix')
+				format('embedded-opentype'),
+			url('../fonts/lato-v23-latin-regular.woff2') format('woff2'),
+			url('../fonts/lato-v23-latin-regular.woff') format('woff'),
+			url('../fonts/lato-v23-latin-regular.ttf') format('truetype'),
+			url('../fonts/lato-v23-latin-regular.svg#Lato') format('svg');
+	}
+	/* lato-italic - latin */
+	@font-face {
+		font-family: 'Lato';
+		font-style: italic;
+		font-weight: 400;
+		src: url('../fonts/lato-v23-latin-italic.eot');
+		src: local(''),
+			url('../fonts/lato-v23-latin-italic.eot?#iefix')
+				format('embedded-opentype'),
+			url('../fonts/lato-v23-latin-italic.woff2') format('woff2'),
+			url('../fonts/lato-v23-latin-italic.woff') format('woff'),
+			url('../fonts/lato-v23-latin-italic.ttf') format('truetype'),
+			url('../fonts/lato-v23-latin-italic.svg#Lato') format('svg');
+	}
+	/* lato-700 - latin */
+	@font-face {
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 700;
+		src: url('../fonts/lato-v23-latin-700.eot');
+		src: local(''),
+			url('../fonts/lato-v23-latin-700.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/lato-v23-latin-700.woff2') format('woff2'),
+			url('../fonts/lato-v23-latin-700.woff') format('woff'),
+			url('../fonts/lato-v23-latin-700.ttf') format('truetype'),
+			url('../fonts/lato-v23-latin-700.svg#Lato') format('svg');
+	}
+
 	:global(html),
 	:global(body) {
 		font-family: 'Lato', sans-serif;
