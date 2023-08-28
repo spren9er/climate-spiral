@@ -120,7 +120,7 @@
 
 			<div id="text">
 				<p id="last-update">
-					last updated on 2023/04/23 (data from 01/1880 to 03/2023)
+					last updated on 2023/08/28 (data from 01/1880 to 07/2023)
 				</p>
 
 				<p>
