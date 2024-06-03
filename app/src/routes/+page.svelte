@@ -120,7 +120,7 @@
 
 			<div id="text">
 				<p id="last-update">
-					last updated on 2024/02/04 (data from 01/1880 to 12/2023)
+					last updated on 2024/06/03 (data from 01/1880 to 04/2024)
 				</p>
 
 				<p>
@@ -226,7 +226,8 @@
 		font-style: normal;
 		font-weight: 400;
 		src: url('/fonts/bebas-neue-v9-latin-regular.eot');
-		src: local(''),
+		src:
+			local(''),
 			url('/fonts/bebas-neue-v9-latin-regular.eot?#iefix')
 				format('embedded-opentype'),
 			url('/fonts/bebas-neue-v9-latin-regular.woff2') format('woff2'),
@@ -240,7 +241,8 @@
 		font-style: normal;
 		font-weight: 400;
 		src: url('/fonts/lato-v23-latin-regular.eot');
-		src: local(''),
+		src:
+			local(''),
 			url('/fonts/lato-v23-latin-regular.eot?#iefix')
 				format('embedded-opentype'),
 			url('/fonts/lato-v23-latin-regular.woff2') format('woff2'),
@@ -254,7 +256,8 @@
 		font-style: italic;
 		font-weight: 400;
 		src: url('/fonts/lato-v23-latin-italic.eot');
-		src: local(''),
+		src:
+			local(''),
 			url('/fonts/lato-v23-latin-italic.eot?#iefix') format('embedded-opentype'),
 			url('/fonts/lato-v23-latin-italic.woff2') format('woff2'),
 			url('/fonts/lato-v23-latin-italic.woff') format('woff'),
@@ -267,7 +270,8 @@
 		font-style: normal;
 		font-weight: 700;
 		src: url('/fonts/lato-v23-latin-700.eot');
-		src: local(''),
+		src:
+			local(''),
 			url('/fonts/lato-v23-latin-700.eot?#iefix') format('embedded-opentype'),
 			url('/fonts/lato-v23-latin-700.woff2') format('woff2'),
 			url('/fonts/lato-v23-latin-700.woff') format('woff'),
