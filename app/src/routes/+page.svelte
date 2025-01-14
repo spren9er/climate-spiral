@@ -134,8 +134,10 @@
 				<p>
 					Above visualization is an interactive version of a climate spiral
 					created by
-					<a href="https://twitter.com/marksubbarao">Mark SubbaRao</a> and NASA
-					SVS in March 2022. The original version is available at
+					<a href="https://bsky.app/profile/marksubbarao.bsky.social">
+						Mark SubbaRao
+					</a>
+					and NASA SVS in March 2022. The original version is available at
 					<a href="https://svs.gsfc.nasa.gov/4975">
 						https://svs.gsfc.nasa.gov/4975
 					</a>. Description from website:
@@ -212,8 +214,8 @@
 				</p>
 			</div>
 
-			<div id="twitter-handle">
-				<a href="https://twitter.com/spren9er">@spren9er</a>
+			<div id="bluesky-handle">
+				<a href="https://bsky.app/profile/spren9er.bsky.social">@spren9er</a>
 			</div>
 		</div>
 	</div>
@@ -373,13 +375,13 @@
 		width: 700px;
 	}
 
-	#twitter-handle {
+	#bluesky-handle {
 		text-align: center;
 		padding: 10px 0 25px 0;
 	}
 
-	#twitter-handle a,
-	#twitter-handle a:visited {
+	#bluesky-handle a,
+	#bluesky-handle a:visited {
 		font-size: 11px;
 		font-weight: bold;
 		text-decoration: none;
