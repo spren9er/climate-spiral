@@ -126,7 +126,7 @@
 				<p>
 					The <i>Climate Spiral</i> is a data visualization originally designed
 					by climate scientist
-					<a href="https://twitter.com/ed_hawkins">Ed Hawkins</a>
+					<a href="https://x.com/ed_hawkins">Ed Hawkins</a>
 					from the National Centre for Atmospheric Science, University of Reading
 					in 2016.
 				</p>

@@ -3,10 +3,10 @@
 ## Introduction
 
 The _Climate Spiral_ is a data visualization originally designed
-by climate scientist [Ed Hawkins](https://twitter.com/ed_hawkins)
+by climate scientist [Ed Hawkins](https://x.com/ed_hawkins)
 from the National Centre for Atmospheric Science, University of Reading in 2016.
 
-This visualization is an interactive version of a climate spiral available at [https://svs.gsfc.nasa.gov/4975](https://svs.gsfc.nasa.gov/4975) and which was created by [Mark SubbaRao](https://twitter.com/marksubbarao) and NASA SVS in March 2022. Description from original website:
+This visualization is an interactive version of a climate spiral available at [https://svs.gsfc.nasa.gov/4975](https://svs.gsfc.nasa.gov/4975) and which was created by [Mark SubbaRao](https://bsky.app/profile/marksubbarao.bsky.social) and NASA SVS in March 2022. Description from original website:
 
 _The visualization presents monthly global temperature anomalies
 between the years 1880-2021. These temperatures are based on the GISS
@@ -42,4 +42,4 @@ This project was done as part of _#30DayChartChallenge 2022_ covering
 - Day 19 (Time Series - Global Change)
 - Day 22 (Time Series - Animation)
 
-It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.spren9er.de). See also corresponding [tweet](https://twitter.com/spren9er/status/1516291303931322369).
+It is available at [https://climate-spiral.spren9er.de](https://climate-spiral.spren9er.de). See also corresponding posts on [X](https://x.com/spren9er/status/1516291303931322369) or [Bluesky](https://bsky.app/profile/spren9er.bsky.social/post/3lb2jegfchh2c).
