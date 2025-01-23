@@ -214,8 +214,8 @@
 				</p>
 			</div>
 
-			<div id="bluesky-handle">
-				<a href="https://bsky.app/profile/spren9er.bsky.social">@spren9er</a>
+			<div id="website-link">
+				<a href="https://spren9er.de">@spren9er</a>
 			</div>
 		</div>
 	</div>
@@ -375,13 +375,13 @@
 		width: 700px;
 	}
 
-	#bluesky-handle {
+	#website-link {
 		text-align: center;
 		padding: 10px 0 25px 0;
 	}
 
-	#bluesky-handle a,
-	#bluesky-handle a:visited {
+	#website-link a,
+	#website-link a:visited {
 		font-size: 11px;
 		font-weight: bold;
 		text-decoration: none;
