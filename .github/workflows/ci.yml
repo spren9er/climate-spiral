@@ -60,7 +60,7 @@ jobs:
           SSH_USER: ${{secrets.SSH_USER}}
 
       - name: Pull Image (via SSH)
-        run: ssh climate-spiral 'cat ~/.github_token | docker login ghcr.io -u spren9er --password-stdin && docker pull ghcr.io/spren9er/climate-spiral:latest'
+        run: ssh climate-spiral "echo '${{ secrets.GHCR_PAT }}' | docker login ghcr.io -u spren9er --password-stdin && docker pull ghcr.io/spren9er/climate-spiral:latest"
 
       - name: Deploy (via SSH)
         run: ssh climate-spiral 'cd ~/sites/climate-spiral && docker compose up --force-recreate -d && docker image prune -f'
