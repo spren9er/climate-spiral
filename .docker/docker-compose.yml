@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   climate-spiral:
     container_name: climate-spiral
@@ -10,5 +8,5 @@ services:
 
 networks:
   default:
-    external:
-      name: nginx-proxy
+    name: nginx-proxy
+    external: true
